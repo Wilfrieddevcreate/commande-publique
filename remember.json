@@ -130,7 +130,36 @@
                 "fr": "Micro-framework léger et flexible, parfait pour des applications simples et des APIs. Faible courbe d’apprentissage et facile à configurer pour des petits projets ou des prototypes. Grande liberté de configuration et personnalisation.",
                 "en": "Light and flexible micro-framework, perfect for simple applications and APIs. Low learning curve and easy to configure for small projects or prototypes. Great freedom of configuration and customization."
             }
-            }
+            },
+            {
+                "framework": "Laravel",
+                "commande": [
+                  "composer create-project --prefer-dist laravel/laravel mon-projet-laravel",
+                  "cd mon-projet-laravel"
+                ],
+                "installation_dependances": [
+                  "composer install"
+                ],
+                "point_fort": {
+                  "fr": "Framework PHP complet, avec des outils intégrés pour l'authentification, la gestion de bases de données, la gestion des tâches, et plus encore. Fournit une structure MVC solide, une syntaxe élégante et un écosystème riche pour le développement web rapide.",
+                  "en": "Complete PHP framework with built-in tools for authentication, database management, task handling, and more. Provides a solid MVC structure, elegant syntax, and a rich ecosystem for rapid web development."
+                }
+              },
+              {
+                "framework": "Symfony",
+                "commande": [
+                  "composer create-project symfony/skeleton mon-projet-symfony",
+                  "cd mon-projet-symfony"
+                ],
+                "installation_dependances": [
+                  "composer install"
+                ],
+                "point_fort": {
+                  "fr": "Framework PHP robuste et flexible, idéal pour des applications web de grande envergure. Offre une architecture modulaire, avec des composants réutilisables et une gestion fine de la configuration. Très utilisé pour des applications professionnelles et des API complexes.",
+                  "en": "Robust and flexible PHP framework, ideal for large-scale web applications. Offers a modular architecture with reusable components and fine-grained configuration management. Widely used for professional applications and complex APIs."
+                }
+              }
+
         ],
         "Code git pour la création d'une clé ssh": [
         {
