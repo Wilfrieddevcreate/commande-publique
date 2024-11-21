@@ -1,282 +1,193 @@
 {
     "Code git pour la création d'une clé ssh": [
-        {
-            "Étape": "Vérification d'une clé existante",
-            "Commande": "ls -al ~/.ssh"
-        },
-        {
-            "Étape": "Générer une nouvelle clé SSH",
-            "Commande": "ssh-keygen -t rsa -b 4096 -C \"VbHw5@example.com\"",
-            "Note": "\"VbHw5@example.com\" doit être remplacé par votre adresse email."
-        },
-        {
-            "Étape": "Ajouter la clé SSH à l'agent",
-            "Commandes": [
-                "eval \"$(ssh-agent -s)\"",
-                "ssh-add ~/.ssh/id_rsa"
-            ]
-        },
-        {
-            "Étape": "Copier la clé publique",
-            "Commande": "cat ~/.ssh/id_rsa.pub",
-            "Note": "Cette étape dépend  du systeme d'exploitation que vous utilisez."
-        },
-        {
-            "Étape": "Ajouter la clé à GitHub",
-            "Instructions": "Collez la clé publique dans votre compte GitHub via les paramètres SSH and GPG keys."
-        },
-        {
-            "Étape": "Tester la connexion",
-            "Commande": "ssh -T git@github.com",
-            "Résultat attendu": "Hi <username>! You've successfully authenticated, but GitHub does not provide shell access."
-        }
+      {
+        "Étape en francais": "Vérification d'une clé existante",
+        "steps en english": "Check on existing SSH key",
+        "Commande": "ls -al ~/.ssh"
+      },
+      {
+        "Étape en francais": "Générer une nouvelle clé SSH",
+        "steps en english": "Generate a new SSH key",
+        "Commande": "ssh-keygen -t rsa -b 4096 -C \"VbHw5@example.com\"",
+        "Note": "\"VbHw5@example.com\" doit être remplacé par votre adresse email. / \"VbHw5@example.com\" must be replaced with your email address."
+      },
+      {
+        "Étape en francais": "Ajouter la clé SSH à l'agent",
+        "steps en english": "Add the SSH key to the agent",
+        "Commandes": [
+          "eval \"$(ssh-agent -s)\"",
+          "ssh-add ~/.ssh/id_rsa"
+        ]
+      },
+      {
+        "Étape en francais": "Copier la clé publique",
+        "steps en english": "Copy the public key",
+        "Commande": "cat ~/.ssh/id_rsa.pub",
+        "Note": "Cette étape dépend du système d'exploitation que vous utilisez. / This step depends on the operating system you are using."
+      },
+      {
+        "Étape en francais": "Ajouter la clé à GitHub",
+        "steps en english": "Add the key to GitHub",
+        "Instructions": "Collez la clé publique dans votre compte GitHub via les paramètres SSH et GPG keys. / Paste the public key into your GitHub account via the SSH and GPG keys settings."
+      },
+      {
+        "Étape en francais": "Tester la connexion",
+        "steps en english": "Test the connection",
+        "Commande": "ssh -T git@github.com",
+        "Résultat attendu": "Hi <username>! You've successfully authenticated, but GitHub does not provide shell access."
+      }
     ],
     "commandes": [
-        {
-            "categorie": "Gestion des fichiers et répertoires",
-            "commandes": [
-                {
-                    "commande": "ls",
-                    "description": "Liste les fichiers dans un répertoire",
-                    "note": "Linux uniquement"
-                },
-                {
-                    "commande": "dir",
-                    "description": "Liste les fichiers dans un répertoire",
-                    "note": "Windows uniquement"
-                },
-                {
-                    "commande": "cd <chemin>",
-                    "description": "Change le répertoire courant",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "mkdir <nom>",
-                    "description": "Crée un nouveau répertoire",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "rm -rf <chemin>",
-                    "description": "Supprime un fichier ou un répertoire",
-                    "note": "Linux uniquement"
-                },
-                {
-                    "commande": "del /s <chemin>",
-                    "description": "Supprime un fichier ou un répertoire",
-                    "note": "Windows uniquement"
-                },
-                {
-                    "commande": "touch <nom>",
-                    "description": "Crée un fichier vide",
-                    "note": "Linux uniquement"
-                },
-                {
-                    "commande": "echo > <fichier>",
-                    "description": "Crée un fichier vide",
-                    "note": "Windows uniquement"
-                }
-            ]
-        },
-        {
-            "categorie": "Commandes Git",
-            "commandes": [
-                {
-                    "commande": "git init",
-                    "description": "Initialise un dépôt Git dans le répertoire courant",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "git clone <url>",
-                    "description": "Clone un dépôt distant",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "git add .",
-                    "description": "Ajoute tous les fichiers au suivi",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "git commit -m \"Message\"",
-                    "description": "Crée un commit avec un message",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "git push origin <branche>",
-                    "description": "Pousse les changements vers le dépôt distant",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "git pull origin <branche>",
-                    "description": "Récupère les dernières modifications depuis le dépôt distant",
-                    "note": "Linux et Windows"
-                }
-            ]
-        },
-        {
-            "categorie": "Commandes Flutter",
-            "commandes": [
-                {
-                    "commande": "flutter create <nom_du_projet>",
-                    "description": "Crée un nouveau projet Flutter",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter run",
-                    "description": "Exécute l'application sur un simulateur ou un appareil connecté",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter build apk",
-                    "description": "Génère un fichier APK pour Android",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter build web",
-                    "description": "Génère une version web de l'application",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter doctor",
-                    "description": "Vérifie la configuration de Flutter",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter clean",
-                    "description": "Nettoie le cache de Flutter",
-                    "note": "Linux et Windows"
-                }
-            ]
-        },
-        {
-            "categorie": "Gestion des paquets",
-            "commandes": [
-                {
-                    "commande": "npm install",
-                    "description": "Installe les dépendances d'un projet Node.js",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "npm run <script>",
-                    "description": "Exécute un script défini dans le fichier package.json",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "pnpm install",
-                    "description": "Installe les dépendances avec pnpm (plus rapide)",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "pip install <package>",
-                    "description": "Installe un package Python",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "sudo apt install <package>",
-                    "description": "Installe un package via le gestionnaire APT (Ubuntu/Debian)",
-                    "note": "Linux uniquement"
-                },
-                {
-                    "commande": "choco install <package>",
-                    "description": "Installe un package via Chocolatey",
-                    "note": "Windows uniquement"
-                }
-            ]
-        },
-        {
-            "categorie": "Serveurs web et outils de développement",
-            "commandes": [
-                {
-                    "commande": "npx create-next-app@latest",
-                    "description": "Crée une application Next.js",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "php -S localhost:8000",
-                    "description": "Lance un serveur PHP local",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "python -m http.server",
-                    "description": "Lance un serveur HTTP pour tester des fichiers statiques",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter emulators",
-                    "description": "Liste les émulateurs disponibles pour Flutter",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "flutter devices",
-                    "description": "Liste les appareils connectés",
-                    "note": "Linux et Windows"
-                }
-            ]
-        },
-        {
-            "categorie": "Réseau et débogage",
-            "commandes": [
-                {
-                    "commande": "ping <adresse>",
-                    "description": "Vérifie la connexion avec une adresse IP ou un domaine",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "curl <url>",
-                    "description": "Envoie une requête HTTP et affiche la réponse",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "ipconfig",
-                    "description": "Affiche la configuration réseau",
-                    "note": "Windows uniquement"
-                },
-                {
-                    "commande": "ifconfig",
-                    "description": "Affiche la configuration réseau",
-                    "note": "Linux uniquement"
-                },
-                {
-                    "commande": "traceroute <adresse>",
-                    "description": "Montre le chemin des paquets jusqu'à une adresse",
-                    "note": "Linux uniquement"
-                },
-                {
-                    "commande": "tracert <adresse>",
-                    "description": "Montre le chemin des paquets jusqu'à une adresse",
-                    "note": "Windows uniquement"
-                }
-            ]
-        },
-        {
-            "categorie": "Docker",
-            "commandes": [
-                {
-                    "commande": "docker build -t <nom>:<tag> .",
-                    "description": "Construit une image Docker",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "docker run -p 8080:80 <nom>:<tag>",
-                    "description": "Lance un conteneur avec mappage de ports",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "docker ps",
-                    "description": "Affiche les conteneurs en cours d'exécution",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "docker stop <id>",
-                    "description": "Arrête un conteneur",
-                    "note": "Linux et Windows"
-                },
-                {
-                    "commande": "docker-compose up",
-                    "description": "Lance les services définis dans docker-compose.yml",
-                    "note": "Linux et Windows"
-                }
-            ]
-        }
+      {
+        "categorie": "Gestion des fichiers et répertoires",
+        "commandes": [
+          {
+            "commande": "ls",
+            "description": "Liste les fichiers dans un répertoire / List files in a directory",
+            "note": "Linux uniquement / Linux only"
+          },
+          {
+            "commande": "dir",
+            "description": "Liste les fichiers dans un répertoire / List files in a directory",
+            "note": "Windows uniquement / Windows only"
+          },
+          {
+            "commande": "cd <chemin>",
+            "description": "Change le répertoire courant / Change the current directory",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "mkdir <nom>",
+            "description": "Crée un nouveau répertoire / Create a new directory",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "rm -rf <chemin>",
+            "description": "Supprime un fichier ou un répertoire / Remove a file or directory",
+            "note": "Linux uniquement / Linux only"
+          },
+          {
+            "commande": "del /s <chemin>",
+            "description": "Supprime un fichier ou un répertoire / Remove a file or directory",
+            "note": "Windows uniquement / Windows only"
+          },
+          {
+            "commande": "touch <nom>",
+            "description": "Crée un fichier vide / Create an empty file",
+            "note": "Linux uniquement / Linux only"
+          },
+          {
+            "commande": "echo > <fichier>",
+            "description": "Crée un fichier vide / Create an empty file",
+            "note": "Windows uniquement / Windows only"
+          }
+        ]
+      },
+      {
+        "categorie": "Commandes Git",
+        "commandes": [
+          {
+            "commande": "git init",
+            "description": "Initialise un dépôt Git dans le répertoire courant / Initialize a Git repository in the current directory",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "git clone <url>",
+            "description": "Clone un dépôt distant / Clone a remote repository",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "git add .",
+            "description": "Ajoute tous les fichiers au suivi / Add all files to tracking",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "git commit -m \"Message\"",
+            "description": "Crée un commit avec un message / Create a commit with a message",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "git push origin <branche>",
+            "description": "Pousse les changements vers le dépôt distant / Push changes to the remote repository",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "git pull origin <branche>",
+            "description": "Récupère les dernières modifications depuis le dépôt distant / Fetch the latest changes from the remote repository",
+            "note": "Linux et Windows / Linux and Windows"
+          }
+        ]
+      },
+      {
+        "categorie": "Commandes Flutter",
+        "commandes": [
+          {
+            "commande": "flutter create <nom_du_projet>",
+            "description": "Crée un nouveau projet Flutter / Create a new Flutter project",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter run",
+            "description": "Exécute l'application sur un simulateur ou un appareil connecté / Run the app on a simulator or connected device",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter build apk",
+            "description": "Génère un fichier APK pour Android / Generate an APK file for Android",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter build web",
+            "description": "Génère une version web de l'application / Generate a web version of the app",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter doctor",
+            "description": "Vérifie la configuration de Flutter / Check Flutter's setup",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter clean",
+            "description": "Nettoie le cache de Flutter / Clean the Flutter cache",
+            "note": "Linux et Windows / Linux and Windows"
+          }
+        ]
+      },
+      {
+        "categorie": "Gestion des paquets",
+        "commandes": [
+          {
+            "commande": "npm install",
+            "description": "Installe les dépendances d'un projet Node.js / Install dependencies for a Node.js project",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "npm run <script>",
+            "description": "Exécute un script défini dans le fichier package.json / Run a script defined in the package.json file",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "pnpm install",
+            "description": "Installe les dépendances avec pnpm (plus rapide) / Install dependencies with pnpm (faster)",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "pip install <package>",
+            "description": "Installe un package Python / Install a Python package",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "sudo apt install <package>",
+            "description": "Installe un package via le gestionnaire APT (Ubuntu/Debian) / Install a package via the APT manager (Ubuntu/Debian)",
+            "note": "Linux uniquement / Linux only"
+          },
+          {
+            "commande": "choco install <package>",
+            "description": "Installe un package via Chocolatey / Install a package via Chocolatey",
+            "note": "Windows uniquement / Windows only"
+          }
+        ]
+      }
     ],
     "commandes_mysql": [
         {
@@ -419,5 +330,730 @@
                 }
             ]
         }
-    ]
+    ],
+    "categorie": "Serveurs web et outils de développement",
+    "commande": [
+        {
+            "commande": "npx create-next-app@latest",
+            "description": "Crée une application Next.js / Creates a Next.js application",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "php -S localhost:8000",
+            "description": "Lance un serveur PHP local / Starts a local PHP server",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "python -m http.server",
+            "description": "Lance un serveur HTTP pour tester des fichiers statiques / Starts an HTTP server to test static files",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter emulators",
+            "description": "Liste les émulateurs disponibles pour Flutter / Lists available emulators for Flutter",
+            "note": "Linux et Windows / Linux and Windows"
+          },
+          {
+            "commande": "flutter devices",
+            "description": "Liste les appareils connectés / Lists connected devices",
+            "note": "Linux et Windows / Linux and Windows"
+          }      
+    ],
+    "categorie reseau": "Réseau et débogage",
+    "commandes reseau": [
+    {
+      "commande": "ping <adresse>",
+      "description": "Vérifie la connexion avec une adresse IP ou un domaine / Checks the connection to an IP address or domain",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+    {
+      "commande": "curl <url>",
+      "description": "Envoie une requête HTTP et affiche la réponse / Sends an HTTP request and displays the response",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+    {
+      "commande": "ipconfig",
+      "description": "Affiche la configuration réseau / Displays network configuration",
+      "note": "Windows uniquement / Windows only"
+    },
+    {
+      "commande": "ifconfig",
+      "description": "Affiche la configuration réseau / Displays network configuration",
+      "note": "Linux uniquement / Linux only"
+    },
+    {
+      "commande": "traceroute <adresse>",
+      "description": "Montre le chemin des paquets jusqu'à une adresse / Shows the path of packets to an address",
+      "note": "Linux uniquement / Linux only"
+    },
+    {
+      "commande": "tracert <adresse>",
+      "description": "Montre le chemin des paquets jusqu'à une adresse / Shows the path of packets to an address",
+      "note": "Windows uniquement / Windows only"
+    }
+  ],
+  "categorie devops": "Devops",
+  "commandes devops": [
+    {
+      "commande": "docker build -t <nom>:<tag> .",
+      "description": "Construit une image Docker / Builds a Docker image",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+    {
+      "commande": "docker run -p 8080:80 <nom>:<tag>",
+      "description": "Lance un conteneur avec mappage de ports / Runs a container with port mapping",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+    {
+      "commande": "docker ps",
+      "description": "Affiche les conteneurs en cours d'exécution / Displays running containers",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+    {
+      "commande": "docker stop <id>",
+      "description": "Arrête un conteneur / Stops a container",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+    {
+      "commande": "docker-compose up",
+      "description": "Lance les services définis dans docker-compose.yml / Starts the services defined in docker-compose.yml",
+      "note": "Linux et Windows / Linux and Windows"
+    },
+
+    {
+        "commande": "docker build -t <nom_image>:<version> .",
+        "description": "Construit une image Docker \u00e0 partir d'un Dockerfile / Builds a Docker image from a Dockerfile",
+        "note": "Docker doit \u00eatre install\u00e9 / Docker must be installed"
+    },
+    {
+        "commande": "kubectl get pods",
+        "description": "Liste les pods en cours d'ex\u00e9cution sur Kubernetes / Lists the running pods in Kubernetes",
+        "note": "Kubernetes doit \u00eatre configur\u00e9 / Kubernetes must be configured"
+    },
+    {
+        "commande": "terraform init",
+        "description": "Initialise un projet Terraform / Initializes a Terraform project",
+        "note": "Terraform doit \u00eatre install\u00e9 / Terraform must be installed"
+    },
+    {
+        "commande": "ansible-playbook <fichier_playbook.yml>",
+        "description": "Applique un playbook Ansible / Applies an Ansible playbook",
+        "note": "Ansible doit \u00eatre install\u00e9 / Ansible must be installed"
+    },
+    {
+        "commande": "aws ec2 describe-instances",
+        "description": "Liste les instances EC2 dans AWS / Lists EC2 instances in AWS",
+        "note": "AWS CLI doit \u00eatre configur\u00e9 / AWS CLI must be configured"
+    },
+    {
+        "commande": "az vm start --name <nom_vm> --resource-group <nom_rg>",
+        "description": "D\u00e9marre une machine virtuelle dans Azure / Starts a virtual machine in Azure",
+        "note": "Azure CLI doit \u00eatre configur\u00e9 / Azure CLI must be configured"
+    },
+    {
+        "commande": "helm install <nom_release> <chart_name>",
+        "description": "Installe un chart Helm sur Kubernetes / Installs a Helm chart on Kubernetes",
+        "note": "Helm doit \u00eatre install\u00e9 / Helm must be installed"
+    },
+    {
+        "commande": "curl -g 'http://<adresse_prometheus>/api/v1/query?query=<votre_requ\u00eate>'",
+        "description": "Ex\u00e9cute une requ\u00eate dans Prometheus / Executes a query in Prometheus",
+        "note": "Prometheus doit \u00eatre accessible / Prometheus must be accessible"
+    },
+    {
+        "commande": "docker run -d -p 3000:3000 grafana/grafana",
+        "description": "D\u00e9marre un conteneur Grafana / Starts a Grafana container",
+        "note": "Docker doit \u00eatre install\u00e9 / Docker must be installed"
+    }
+  ],
+  "Catégorie testing": "Testing",
+  "Commandes testing": [
+    {"exploitation": ""},
+    {
+      "commande": "npm test",
+      "description": "Lance les tests définis dans le projet / Runs the tests defined in the project",
+      "note": "Doit être exécuté dans un projet Node.js avec un framework de test comme Jest / Must be run in a Node.js project with a testing framework like Jest"
+    },
+    {
+      "commande": "jest",
+      "description": "Lance les tests avec Jest / Runs tests with Jest",
+      "note": "Doit être installé via npm / Must be installed via npm"
+    },
+    {
+      "commande": "npm run lint",
+      "description": "Vérifie la qualité du code avec un linter / Checks the code quality with a linter",
+      "note": "Doit être configuré dans le projet / Must be configured in the project"
+    },
+    {
+      "commande": "npm run build",
+      "description": "Compile le projet pour la production / Compiles the project for production",
+      "note": "Prépare le code pour un déploiement / Prepares the code for deployment"
+    },
+    {
+      "commande": "mocha",
+      "description": "Exécute les tests unitaires avec Mocha / Runs unit tests with Mocha",
+      "note": "Doit être installé et configuré avec un framework de test / Must be installed and configured with a testing framework"
+    },
+    {
+      "commande": "chai",
+      "description": "Fournit des assertions pour les tests / Provides assertions for tests",
+      "note": "Utilisé souvent avec Mocha / Often used with Mocha"
+    },
+    {
+      "commande": "cypress open",
+      "description": "Ouvre l'interface graphique de Cypress pour les tests end-to-end / Opens Cypress GUI for end-to-end testing",
+      "note": "Nécessite Cypress installé / Requires Cypress to be installed"
+    },
+    {
+      "commande": "cypress run",
+      "description": "Exécute les tests Cypress en ligne de commande / Runs Cypress tests in the command line",
+      "note": "Utilisé pour les tests en continu / Used for continuous testing"
+    },
+    {
+      "commande": "testcafe",
+      "description": "Exécute les tests de navigateur automatisés / Runs automated browser tests",
+      "note": "Peut être utilisé pour tester les applications web / Can be used for testing web applications"
+    },
+    {
+      "commande": "selenium-server",
+      "description": "Lance un serveur Selenium pour les tests de navigateur automatisés / Starts a Selenium server for automated browser tests",
+      "note": "Nécessite une configuration préalable / Requires prior setup"
+    }
+  ],
+  "Catégorie des automatisations des taches": "Automatisation des taches",
+  "Commandes automatisation des tâches": [
+    {
+      "commande": "npm run watch",
+      "description": {
+        "fr": "Surveille les fichiers du projet pour détecter les changements et exécuter automatiquement les commandes spécifiées.",
+        "en": "Watches project files for changes and automatically runs specified commands."
+      },
+      "explications": {
+        "fr": "Cette commande est utile pour automatiser les tâches répétitives comme la compilation des fichiers, l'exécution de tests ou la génération de fichiers optimisés chaque fois qu'un fichier source est modifié. Cela permet de gagner du temps et d'assurer que les modifications sont rapidement prises en compte.",
+        "en": "This command is useful for automating repetitive tasks like compiling files, running tests, or generating optimized files whenever a source file is changed. It saves time and ensures that changes are quickly reflected."
+      },
+      "note": {
+        "fr": "Doit être configuré dans le projet avec un script de type `watch`.",
+        "en": "Must be configured in the project with a `watch` script."
+      }
+    },
+    {
+      "commande": "gulp",
+      "description": {
+        "fr": "Gulp est un outil de build pour automatiser des tâches telles que la minification de fichiers, la compilation de Sass, ou la surveillance de fichiers.",
+        "en": "Gulp is a build tool used to automate tasks such as file minification, Sass compilation, or file watching."
+      },
+      "explications": {
+        "fr": "Gulp permet de créer des flux de travail automatisés (task runners) pour accélérer le processus de développement en exécutant des tâches courantes comme l'optimisation d'images, la concaténation de fichiers JavaScript, et la gestion des préprocesseurs CSS.",
+        "en": "Gulp allows you to create automated workflows (task runners) to speed up the development process by running common tasks like image optimization, JavaScript file concatenation, and managing CSS preprocessors."
+      },
+      "note": {
+        "fr": "Doit être installé et configuré dans le projet.",
+        "en": "Must be installed and configured in the project."
+      }
+    },
+    {
+      "commande": "webpack --watch",
+      "description": {
+        "fr": "Active le mode de surveillance dans Webpack pour recompiler automatiquement lorsque des fichiers sont modifiés.",
+        "en": "Enables watch mode in Webpack to automatically recompile when files are modified."
+      },
+      "explications": {
+        "fr": "Webpack avec l'option `--watch` permet de surveiller les fichiers et de les recompiler chaque fois qu'ils sont modifiés, ce qui est très utile pour le développement en temps réel. Cela permet de voir les résultats des modifications immédiatement.",
+        "en": "Webpack with the `--watch` option allows monitoring files and recompiling them whenever they are modified, which is very useful for real-time development. This lets you see the results of changes immediately."
+      },
+      "note": {
+        "fr": "Doit être configuré dans le fichier `webpack.config.js`.",
+        "en": "Must be configured in the `webpack.config.js` file."
+      }
+    },
+    {
+      "commande": "cron",
+      "description": {
+        "fr": "Outil permettant d'exécuter des tâches automatisées à des moments précis sur un serveur.",
+        "en": "A tool for running automated tasks at specific times on a server."
+      },
+      "explications": {
+        "fr": "Cron est utilisé pour planifier des tâches sur un serveur ou une machine afin qu'elles soient exécutées à des intervalles réguliers (par exemple, tous les jours à minuit). Cela permet d'automatiser les tâches d'entretien ou de mise à jour sans intervention manuelle.",
+        "en": "Cron is used to schedule tasks on a server or machine to be executed at regular intervals (for example, every day at midnight). This allows automating maintenance or update tasks without manual intervention."
+      },
+      "note": {
+        "fr": "Disponible sur les systèmes Unix.",
+        "en": "Available on Unix systems."
+      }
+    },
+    {
+      "commande": "rsync -avz",
+      "description": {
+        "fr": "Synchronise les fichiers et répertoires entre deux emplacements de manière rapide et efficace.",
+        "en": "Synchronizes files and directories between two locations efficiently."
+      },
+      "explications": {
+        "fr": "Rsync est utilisé pour effectuer des sauvegardes et des transferts de fichiers de manière optimisée. Il copie uniquement les fichiers modifiés, ce qui rend le processus plus rapide et économe en ressources.",
+        "en": "Rsync is used for backups and file transfers in an optimized way. It only copies modified files, making the process faster and more resource-efficient."
+      },
+      "note": {
+        "fr": "Utilisé pour la synchronisation et la sauvegarde de données.",
+        "en": "Used for data synchronization and backup."
+      }
+    },
+    {
+      "commande": "npm run deploy",
+      "description": {
+        "fr": "Automatise le déploiement de l'application sur un environnement de production.",
+        "en": "Automates the deployment of the application to a production environment."
+      },
+      "explications": {
+        "fr": "Cette commande est utilisée pour simplifier le processus de déploiement, en exécutant toutes les étapes nécessaires, telles que la compilation, le test et le transfert de fichiers sur un serveur distant. Cela réduit le risque d'erreurs humaines et rend le processus de mise en production plus rapide et plus fiable.",
+        "en": "This command is used to simplify the deployment process by running all necessary steps like compiling, testing, and transferring files to a remote server. It reduces the risk of human error and makes the deployment process faster and more reliable."
+      },
+      "note": {
+        "fr": "Doit être configuré pour correspondre à votre environnement de production.",
+        "en": "Must be configured to match your production environment."
+      }
+    },
+    {
+      "commande": "npm run clean",
+      "description": {
+        "fr": "Supprime les fichiers temporaires et les artefacts générés pour nettoyer l'environnement de développement.",
+        "en": "Removes temporary files and generated artifacts to clean up the development environment."
+      },
+      "explications": {
+        "fr": "Il est important de nettoyer l'environnement de développement pour éviter l'accumulation de fichiers inutiles qui peuvent ralentir le système. Cette commande peut être utilisée pour supprimer les fichiers de cache, les logs, et autres artefacts temporaires.",
+        "en": "Cleaning the development environment is important to avoid the accumulation of unnecessary files that can slow down the system. This command can be used to remove cache files, logs, and other temporary artifacts."
+      },
+      "note": {
+        "fr": "Permet de garder l'environnement de travail propre.",
+        "en": "Helps keep the working environment clean."
+      }
+    },
+    {
+      "commande": "docker-compose up",
+      "description": {
+        "fr": "Lance les conteneurs définis dans le fichier `docker-compose.yml`.",
+        "en": "Starts the containers defined in the `docker-compose.yml` file."
+      },
+      "explications": {
+        "fr": "Docker Compose permet de gérer plusieurs conteneurs Docker à la fois. Cette commande lance tous les conteneurs nécessaires pour exécuter l'application dans un environnement isolé et cohérent.",
+        "en": "Docker Compose allows managing multiple Docker containers at once. This command starts all the necessary containers to run the application in an isolated and consistent environment."
+      },
+      "note": {
+        "fr": "Doit être utilisé avec un fichier `docker-compose.yml` configuré.",
+        "en": "Must be used with a configured `docker-compose.yml` file."
+      }
+    }
+  ],
+  "Categorie fun": "Categorie fun",
+  "Commandes fun pour développeurs full stack": [
+    {
+      "commande": "npm run joke",
+      "description": {
+        "fr": "Affiche une blague aléatoire pour détendre l'atmosphère pendant que vous codez.",
+        "en": "Displays a random joke to lighten the mood while coding."
+      },
+      "explications": {
+        "fr": "Parfait pour les moments de stress ou de frustration. Une blague rapide peut améliorer l'état d'esprit et aider à se détendre avant de replonger dans le code.",
+        "en": "Perfect for moments of stress or frustration. A quick joke can improve your mood and help you relax before diving back into the code."
+      },
+      "note": {
+        "fr": "Vous devez installer un paquet de blagues comme `npm install --save joke-generator` pour que cela fonctionne.",
+        "en": "You need to install a joke package like `npm install --save joke-generator` for it to work."
+      }
+    },
+    {
+      "commande": "git commit -m 'Fixes everything'",
+      "description": {
+        "fr": "Un message de commit épique qui fait croire que vous avez tout réparé.",
+        "en": "An epic commit message that makes it seem like you fixed everything."
+      },
+      "explications": {
+        "fr": "Cette commande est souvent utilisée avec humour quand vous voulez faire croire que vous avez résolu tous les problèmes dans un commit, même si ce n'est pas vraiment le cas.",
+        "en": "This command is often used humorously when you want to make it seem like you fixed every issue in one commit, even though that's not really the case."
+      },
+      "note": {
+        "fr": "À utiliser avec modération !",
+        "en": "Use with moderation!"
+      }
+    },
+    {
+      "commande": "npm run dev -- --no-color",
+      "description": {
+        "fr": "Désactive les couleurs dans la sortie de développement, pour un style plus sobre.",
+        "en": "Disables colors in development output for a more minimalist style."
+      },
+      "explications": {
+        "fr": "Si vous êtes fatigué des couleurs vives dans la console ou si vous aimez garder les choses simples, cette commande vous permet de supprimer les couleurs dans les messages de log.",
+        "en": "If you're tired of the bright colors in the console or just like to keep things simple, this command removes colors from log messages."
+      },
+      "note": {
+        "fr": "Utile si vous aimez la simplicité.",
+        "en": "Useful if you prefer simplicity."
+      }
+    },
+    {
+      "commande": "npx cowsay 'Hello, Full Stack Developer!'",
+      "description": {
+        "fr": "Affiche une vache ASCII qui vous dit 'Hello, Full Stack Developer!'",
+        "en": "Displays an ASCII cow saying 'Hello, Full Stack Developer!'"
+      },
+      "explications": {
+        "fr": "Parfait pour égayer votre terminal avec une touche d'humour. C'est une petite touche amusante pour commencer la journée ou faire une pause dans le code.",
+        "en": "Perfect for brightening up your terminal with a touch of humor. It's a fun way to start the day or take a break from coding."
+      },
+      "note": {
+        "fr": "Vous devez installer `cowsay` avec `npm install -g cowsay`.",
+        "en": "You need to install `cowsay` with `npm install -g cowsay`."
+      }
+    },
+    {
+      "commande": "git blame HEAD",
+      "description": {
+        "fr": "Identifie la personne responsable des dernières modifications.",
+        "en": "Identifies the person responsible for the latest changes."
+      },
+      "explications": {
+        "fr": "Utilisé pour rechercher de manière humoristique qui a ajouté une certaine ligne de code. C'est une commande pratique pour découvrir d'où vient une erreur, tout en ajoutant un peu de blâme.",
+        "en": "Used humorously to figure out who added a specific line of code. It's a useful command to trace an error while adding some blame."
+      },
+      "note": {
+        "fr": "À utiliser avec humour. Ne blâmez pas trop vos collègues !",
+        "en": "Use with humor. Don't blame your colleagues too much!"
+      }
+    },
+    {
+      "commande": "npm run start -- --watch-movie",
+      "description": {
+        "fr": "Une commande fictive qui prétend regarder un film tout en démarrant le projet.",
+        "en": "A fictional command pretending to watch a movie while starting the project."
+      },
+      "explications": {
+        "fr": "Cette commande est un clin d'œil aux développeurs qui passent des heures devant leur écran. Bien sûr, elle n'existe pas réellement, mais elle est là pour rappeler qu'il faut parfois faire une pause.",
+        "en": "This command is a wink to developers who spend hours in front of their screens. Of course, it doesn't actually exist, but it's a reminder to take a break once in a while."
+      },
+      "note": {
+        "fr": "Pas une vraie commande, mais cela pourrait faire sourire.",
+        "en": "Not a real command, but it might bring a smile."
+      }
+    },
+    {
+      "commande": "git merge --no-ff",
+      "description": {
+        "fr": "Force la fusion de branches avec un commit explicite, même si la fusion pourrait être fast-forward.",
+        "en": "Forces a branch merge with an explicit commit, even if the merge could be fast-forward."
+      },
+      "explications": {
+        "fr": "Une manière élégante de fusionner des branches tout en conservant un historique propre, même lorsque la fusion pourrait être une simple avance rapide.",
+        "en": "A stylish way to merge branches while keeping a clean history, even when the merge could just be a fast-forward."
+      },
+      "note": {
+        "fr": "Une manière plus ordonnée de faire les fusions.",
+        "en": "A cleaner way to handle merges."
+      }
+    },
+    {
+      "commande": "npm run sleep",
+      "description": {
+        "fr": "Une commande qui ne fait rien, à part vous faire attendre.",
+        "en": "A command that does nothing except make you wait."
+      },
+      "explications": {
+        "fr": "Pour tester votre patience, cette commande ne fait rien du tout et vous oblige à attendre. Elle sert à rappeler qu'il est parfois bon de prendre une pause, même pendant un projet de développement.",
+        "en": "To test your patience, this command does absolutely nothing and forces you to wait. It serves as a reminder that it's sometimes good to take a break, even during a development project."
+      },
+      "note": {
+        "fr": "Pour le fun, ne l'utilisez pas pour de vrai.",
+        "en": "Just for fun, don't actually use it for real."
+      }
+    }
+  ],
+  "Categorie blagues": "Blagues pour les développeurs",
+  "commandes blagues": [
+                {
+                    "commande": "yes 'Je suis le meilleur développeur!'",
+                    "description": "Affiche un message en boucle infinie dans le terminal",
+                    "note": "Linux et Windows via Git Bash"
+                },
+                {
+                    "commande": "rm -rf /",
+                    "description": "Blague classique : **NE FAITES PAS ÇA** (supprime tout le système !)",
+                    "note": "Linux et MacOS uniquement, une blague dangereuse"
+                }
+    ],
+    "Categorie Jeu": "Jeu",
+    "commandes jeu": [
+        {
+            "commande": "ninvaders",
+            "description": "Un jeu rétro Space Invaders dans le terminal",
+            "note": "Linux, installez-le avec `sudo apt install ninvaders`"
+        },
+        {
+            "commande": "sl",
+            "description": "Affiche un train qui traverse l'écran si vous tapez mal `ls`",
+            "note": "Linux, nécessite une installation via `sudo apt install sl`"
+        },
+        {
+            "commande": "pacman4console",
+            "description": "Jouez à Pac-Man directement dans le terminal",
+            "note": "Linux, installez-le avec `sudo apt install pacman4console`"
+        },
+        {
+            "commande": "sudo apt-get install bastet",
+            "description": "Jouez à Tetris dans le terminal",
+            "note": "Linux uniquement"
+        }
+    ],
+            "categorie terminal": "Personnalisation du terminal",
+            "commandes terminal": [
+                {
+                    "commande": "neofetch",
+                    "description": "Affiche une présentation stylée des informations système",
+                    "note": "Linux, nécessite une installation via `sudo apt install neofetch` ou équivalent"
+                },
+                {
+                    "commande": "figlet 'Hello, World!'",
+                    "description": "Affiche du texte en ASCII art",
+                    "note": "Linux, installez-le avec `sudo apt install figlet`"
+                },
+                {
+                    "commande": "cmatrix",
+                    "description": "Affiche un effet Matrix dans le terminal",
+                    "note": "Linux, nécessite une installation via `sudo apt install cmatrix`"
+                },
+                {
+                    "commande": "cls && echo Welcome to My Dev Environment!",
+                    "description": "Nettoie l'écran et affiche un message personnalisé",
+                    "note": "Windows uniquement"
+                }
+            ],
+
+   "Alias de commandes pour développeurs full stack": [
+    {
+      "commande": "alias gs='git status'",
+      "description": {
+        "fr": "Crée un alias pour la commande `git status`, afin de vérifier l'état des modifications dans votre dépôt.",
+        "en": "Creates an alias for the `git status` command to check the status of your changes in the repository."
+      },
+      "explications": {
+        "fr": "Cela permet de taper seulement `gs` au lieu de `git status` pour voir rapidement les fichiers modifiés et leur statut.",
+        "en": "This allows you to type just `gs` instead of `git status` to quickly see modified files and their status."
+      },
+      "note": {
+        "fr": "Utilisez ce genre d'alias pour économiser du temps et être plus productif.",
+        "en": "Use this type of alias to save time and be more productive."
+      }
+    },
+    {
+      "commande": "alias ll='ls -alF'",
+      "description": {
+        "fr": "Crée un alias pour la commande `ls -alF`, afin de lister les fichiers avec des informations détaillées.",
+        "en": "Creates an alias for the `ls -alF` command to list files with detailed information."
+      },
+      "explications": {
+        "fr": "Cette commande affiche les fichiers avec des détails comme les permissions, la taille et la date de modification.",
+        "en": "This command displays files with details such as permissions, size, and modification date."
+      },
+      "note": {
+        "fr": "Pratique pour voir tout le contenu du répertoire avec plus de détails.",
+        "en": "Useful to see all the contents of a directory with more details."
+      }
+    },
+    {
+      "commande": "alias ga='git add .'",
+      "description": {
+        "fr": "Crée un alias pour ajouter tous les fichiers modifiés à l'index de Git.",
+        "en": "Creates an alias to add all modified files to the Git index."
+      },
+      "explications": {
+        "fr": "Cela permet d'ajouter tous les fichiers modifiés à l'index sans avoir à spécifier chaque fichier individuellement.",
+        "en": "This allows you to add all modified files to the index without specifying each file individually."
+      },
+      "note": {
+        "fr": "Très utile pour un commit rapide avec tous les fichiers modifiés.",
+        "en": "Very useful for a quick commit with all modified files."
+      }
+    },
+    {
+      "commande": "alias gl='git log --oneline'",
+      "description": {
+        "fr": "Crée un alias pour afficher l'historique des commits de manière concise.",
+        "en": "Creates an alias to display the commit history in a concise way."
+      },
+      "explications": {
+        "fr": "L'option `--oneline` affiche chaque commit sur une seule ligne, ce qui rend l'historique facile à parcourir.",
+        "en": "The `--oneline` option displays each commit on one line, making the history easy to browse."
+      },
+      "note": {
+        "fr": "Pratique pour rapidement voir les derniers commits dans le projet.",
+        "en": "Useful to quickly see the latest commits in the project."
+      }
+    },
+    {
+      "commande": "alias code='open -a Visual\\ Studio\\ Code .'",
+      "description": {
+        "fr": "Crée un alias pour ouvrir le projet dans Visual Studio Code avec une seule commande.",
+        "en": "Creates an alias to open the project in Visual Studio Code with a single command."
+      },
+      "explications": {
+        "fr": "Cela ouvre Visual Studio Code dans le répertoire courant, ce qui vous permet de commencer à coder rapidement.",
+        "en": "This opens Visual Studio Code in the current directory, allowing you to start coding quickly."
+      },
+      "note": {
+        "fr": "N'oubliez pas que `open` fonctionne sur macOS. Sur Linux ou Windows, vous devrez adapter la commande.",
+        "en": "Remember that `open` works on macOS. On Linux or Windows, you'll need to adjust the command."
+      }
+    },
+    {
+      "commande": "alias c='clear'",
+      "description": {
+        "fr": "Crée un alias pour la commande `clear`, qui nettoie l'écran du terminal.",
+        "en": "Creates an alias for the `clear` command, which clears the terminal screen."
+      },
+      "explications": {
+        "fr": "Un alias très simple mais utile pour garder votre terminal propre et dégagé.",
+        "en": "A very simple yet useful alias to keep your terminal clean and clear."
+      },
+      "note": {
+        "fr": "Nécessaire pour éviter que le terminal ne devienne trop encombré.",
+        "en": "Necessary to prevent the terminal from becoming too cluttered."
+      }
+    },
+    {
+      "commande": "alias update='sudo apt-get update && sudo apt-get upgrade'",
+      "description": {
+        "fr": "Crée un alias pour mettre à jour et améliorer les paquets sur votre système Linux.",
+        "en": "Creates an alias to update and upgrade packages on your Linux system."
+      },
+      "explications": {
+        "fr": "Cela combine deux commandes en une seule, vous permettant de garder votre système à jour avec un simple alias.",
+        "en": "This combines two commands into one, allowing you to keep your system up to date with a single alias."
+      },
+      "note": {
+        "fr": "Très utile pour la maintenance régulière de votre machine.",
+        "en": "Very useful for regular maintenance of your machine."
+      }
+    },
+    {
+      "commande": "alias gs='git status -sb'",
+      "description": {
+        "fr": "Crée un alias pour afficher l'état des fichiers de manière plus concise et simplifiée.",
+        "en": "Creates an alias to display the status of files in a more concise and simplified way."
+      },
+      "explications": {
+        "fr": "L'option `-sb` fournit un aperçu rapide de l'état des fichiers dans votre projet, idéal pour les vérifications rapides.",
+        "en": "The `-sb` option provides a quick overview of the file statuses in your project, perfect for a fast check."
+      },
+      "note": {
+        "fr": "Pratique pour les développeurs qui ont besoin d'une vue rapide des modifications.",
+        "en": "Great for developers who need a quick view of changes."
+      }
+    }
+  ],
+  "Alias fun pour taquiner les amis": [
+    {
+      "commande": "alias fixit='echo \"Windows is not responding... Try again later...\"'",
+      "description": {
+        "fr": "Affiche un message simulant un plantage de Windows.",
+        "en": "Displays a message simulating a Windows crash."
+      },
+      "explications": {
+        "fr": "Cela taquine un peu les utilisateurs de Windows en leur rappelant le fameux 'Écran bleu de la mort'.",
+        "en": "It teases Windows users by reminding them of the infamous 'Blue Screen of Death'."
+      },
+      "note": {
+        "fr": "Un classique de la taquinerie pour les utilisateurs de Windows.",
+        "en": "A classic prank for Windows users."
+      }
+    },
+    {
+      "commande": "alias selfdestruct='echo \"Self-destruction sequence activated...\"; sleep 3; echo \"Just kidding!\"'",
+      "description": {
+        "fr": "Affiche un message de destruction imminente, puis révèle que c'est une blague.",
+        "en": "Displays an impending self-destruction message, then reveals it’s a joke."
+      },
+      "explications": {
+        "fr": "Cette commande fait croire à une destruction imminente du système, mais finit par détendre l'atmosphère.",
+        "en": "This command makes it seem like the system is about to self-destruct but ends up lightening the mood."
+      },
+      "note": {
+        "fr": "Idéal pour taquiner un ami tout en le mettant dans l'ambiance du 'suspense'.",
+        "en": "Perfect for pranking a friend and building up some 'suspense'."
+      }
+    },
+    {
+      "commande": "alias help='echo \"You need help... or maybe a nap?\"'",
+      "description": {
+        "fr": "Affiche un message taquin en répondant à une commande `help`.",
+        "en": "Displays a teasing message when running the `help` command."
+      },
+      "explications": {
+        "fr": "Cela redéfinit la commande `help` pour donner une réponse un peu sarcastique.",
+        "en": "It redefines the `help` command to give a slightly sarcastic response."
+      },
+      "note": {
+        "fr": "Parfait pour ceux qui cherchent des réponses dans le terminal... mais qui ne seront pas pris au sérieux.",
+        "en": "Perfect for those who look for answers in the terminal... but won’t be taken seriously."
+      }
+    },
+    {
+      "commande": "alias brb='echo \"Be right back... maybe. Depends on Wi-Fi connection.\"'",
+      "description": {
+        "fr": "Affiche un message humoristique lorsque tu écris `brb`.",
+        "en": "Displays a humorous message when you type `brb`."
+      },
+      "explications": {
+        "fr": "C'est une façon de taquiner les gens qui disent qu'ils reviendront bientôt.",
+        "en": "It’s a way to tease people who say they’ll be back soon."
+      },
+      "note": {
+        "fr": "Un alias simple pour une promesse floue de revenir.",
+        "en": "A simple alias for a vague promise to return."
+      }
+    },
+    {
+      "commande": "alias reboot='echo \"Rebooting... your system might take a nap...\"'",
+      "description": {
+        "fr": "Affiche un message taquin en lançant une commande `reboot`.",
+        "en": "Displays a teasing message when the `reboot` command is issued."
+      },
+      "explications": {
+        "fr": "Cela peut faire sourire en simulant que l'ordinateur a besoin d'une pause, tout comme un humain !",
+        "en": "It makes people smile by simulating that the computer needs a break, just like a human!"
+      },
+      "note": {
+        "fr": "À utiliser pour taquiner quelqu'un qui veut redémarrer son PC.",
+        "en": "Use to prank someone trying to restart their PC."
+      }
+    },
+    {
+      "commande": "alias fart='echo \"Warning: Sound alert coming from your system...\"; sleep 1; echo \"It’s just a fart.\"'",
+      "description": {
+        "fr": "Affiche un message effrayant avant de révéler que c'est une blague.",
+        "en": "Displays a scary message before revealing it’s a joke."
+      },
+      "explications": {
+        "fr": "Cela taquine avec un effet sonore effrayant suivi de la révélation d'une blague.",
+        "en": "It pranks with a scary sound effect followed by the reveal of a joke."
+      },
+      "note": {
+        "fr": "Idéal pour ceux qui aiment les surprises et l'humour de bas étage.",
+        "en": "Great for those who enjoy surprises and low-brow humor."
+      }
+    },
+    {
+      "commande": "alias lol='echo \"Laughing Out Loud... Wait, I meant Laughing Over Linux!\"'",
+      "description": {
+        "fr": "Affiche un message avec un jeu de mots sur Linux en réponse à `lol`.",
+        "en": "Displays a message with a pun on Linux in response to `lol`."
+      },
+      "explications": {
+        "fr": "Un petit jeu de mots pour amuser les utilisateurs Linux qui aiment les blagues de geek.",
+        "en": "A little pun to amuse Linux users who enjoy geek jokes."
+      },
+      "note": {
+        "fr": "À utiliser pour faire sourire les amis lorsqu'ils sont trop sérieux.",
+        "en": "Use it to make your friends smile when they’re too serious."
+      }
+    }
+  ]
 }
+  
