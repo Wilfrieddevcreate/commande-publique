@@ -1,0 +1,423 @@
+{
+    "Code git pour la création d'une clé ssh": [
+        {
+            "Étape": "Vérification d'une clé existante",
+            "Commande": "ls -al ~/.ssh"
+        },
+        {
+            "Étape": "Générer une nouvelle clé SSH",
+            "Commande": "ssh-keygen -t rsa -b 4096 -C \"VbHw5@example.com\"",
+            "Note": "\"VbHw5@example.com\" doit être remplacé par votre adresse email."
+        },
+        {
+            "Étape": "Ajouter la clé SSH à l'agent",
+            "Commandes": [
+                "eval \"$(ssh-agent -s)\"",
+                "ssh-add ~/.ssh/id_rsa"
+            ]
+        },
+        {
+            "Étape": "Copier la clé publique",
+            "Commande": "cat ~/.ssh/id_rsa.pub",
+            "Note": "Cette étape dépend  du systeme d'exploitation que vous utilisez."
+        },
+        {
+            "Étape": "Ajouter la clé à GitHub",
+            "Instructions": "Collez la clé publique dans votre compte GitHub via les paramètres SSH and GPG keys."
+        },
+        {
+            "Étape": "Tester la connexion",
+            "Commande": "ssh -T git@github.com",
+            "Résultat attendu": "Hi <username>! You've successfully authenticated, but GitHub does not provide shell access."
+        }
+    ],
+    "commandes": [
+        {
+            "categorie": "Gestion des fichiers et répertoires",
+            "commandes": [
+                {
+                    "commande": "ls",
+                    "description": "Liste les fichiers dans un répertoire",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "dir",
+                    "description": "Liste les fichiers dans un répertoire",
+                    "note": "Windows uniquement"
+                },
+                {
+                    "commande": "cd <chemin>",
+                    "description": "Change le répertoire courant",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "mkdir <nom>",
+                    "description": "Crée un nouveau répertoire",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "rm -rf <chemin>",
+                    "description": "Supprime un fichier ou un répertoire",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "del /s <chemin>",
+                    "description": "Supprime un fichier ou un répertoire",
+                    "note": "Windows uniquement"
+                },
+                {
+                    "commande": "touch <nom>",
+                    "description": "Crée un fichier vide",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "echo > <fichier>",
+                    "description": "Crée un fichier vide",
+                    "note": "Windows uniquement"
+                }
+            ]
+        },
+        {
+            "categorie": "Commandes Git",
+            "commandes": [
+                {
+                    "commande": "git init",
+                    "description": "Initialise un dépôt Git dans le répertoire courant",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "git clone <url>",
+                    "description": "Clone un dépôt distant",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "git add .",
+                    "description": "Ajoute tous les fichiers au suivi",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "git commit -m \"Message\"",
+                    "description": "Crée un commit avec un message",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "git push origin <branche>",
+                    "description": "Pousse les changements vers le dépôt distant",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "git pull origin <branche>",
+                    "description": "Récupère les dernières modifications depuis le dépôt distant",
+                    "note": "Linux et Windows"
+                }
+            ]
+        },
+        {
+            "categorie": "Commandes Flutter",
+            "commandes": [
+                {
+                    "commande": "flutter create <nom_du_projet>",
+                    "description": "Crée un nouveau projet Flutter",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter run",
+                    "description": "Exécute l'application sur un simulateur ou un appareil connecté",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter build apk",
+                    "description": "Génère un fichier APK pour Android",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter build web",
+                    "description": "Génère une version web de l'application",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter doctor",
+                    "description": "Vérifie la configuration de Flutter",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter clean",
+                    "description": "Nettoie le cache de Flutter",
+                    "note": "Linux et Windows"
+                }
+            ]
+        },
+        {
+            "categorie": "Gestion des paquets",
+            "commandes": [
+                {
+                    "commande": "npm install",
+                    "description": "Installe les dépendances d'un projet Node.js",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "npm run <script>",
+                    "description": "Exécute un script défini dans le fichier package.json",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "pnpm install",
+                    "description": "Installe les dépendances avec pnpm (plus rapide)",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "pip install <package>",
+                    "description": "Installe un package Python",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "sudo apt install <package>",
+                    "description": "Installe un package via le gestionnaire APT (Ubuntu/Debian)",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "choco install <package>",
+                    "description": "Installe un package via Chocolatey",
+                    "note": "Windows uniquement"
+                }
+            ]
+        },
+        {
+            "categorie": "Serveurs web et outils de développement",
+            "commandes": [
+                {
+                    "commande": "npx create-next-app@latest",
+                    "description": "Crée une application Next.js",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "php -S localhost:8000",
+                    "description": "Lance un serveur PHP local",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "python -m http.server",
+                    "description": "Lance un serveur HTTP pour tester des fichiers statiques",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter emulators",
+                    "description": "Liste les émulateurs disponibles pour Flutter",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "flutter devices",
+                    "description": "Liste les appareils connectés",
+                    "note": "Linux et Windows"
+                }
+            ]
+        },
+        {
+            "categorie": "Réseau et débogage",
+            "commandes": [
+                {
+                    "commande": "ping <adresse>",
+                    "description": "Vérifie la connexion avec une adresse IP ou un domaine",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "curl <url>",
+                    "description": "Envoie une requête HTTP et affiche la réponse",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "ipconfig",
+                    "description": "Affiche la configuration réseau",
+                    "note": "Windows uniquement"
+                },
+                {
+                    "commande": "ifconfig",
+                    "description": "Affiche la configuration réseau",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "traceroute <adresse>",
+                    "description": "Montre le chemin des paquets jusqu'à une adresse",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "tracert <adresse>",
+                    "description": "Montre le chemin des paquets jusqu'à une adresse",
+                    "note": "Windows uniquement"
+                }
+            ]
+        },
+        {
+            "categorie": "Docker",
+            "commandes": [
+                {
+                    "commande": "docker build -t <nom>:<tag> .",
+                    "description": "Construit une image Docker",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "docker run -p 8080:80 <nom>:<tag>",
+                    "description": "Lance un conteneur avec mappage de ports",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "docker ps",
+                    "description": "Affiche les conteneurs en cours d'exécution",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "docker stop <id>",
+                    "description": "Arrête un conteneur",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "docker-compose up",
+                    "description": "Lance les services définis dans docker-compose.yml",
+                    "note": "Linux et Windows"
+                }
+            ]
+        }
+    ],
+    "commandes_mysql": [
+        {
+            "categorie": "Démarrage et arrêt du service MySQL",
+            "commandes": [
+                {
+                    "commande": "sudo service mysql start",
+                    "description": "Démarre le service MySQL",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "sudo service mysql stop",
+                    "description": "Arrête le service MySQL",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "sudo service mysql restart",
+                    "description": "Redémarre le service MySQL",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "net start mysql",
+                    "description": "Démarre le service MySQL",
+                    "note": "Windows uniquement"
+                },
+                {
+                    "commande": "net stop mysql",
+                    "description": "Arrête le service MySQL",
+                    "note": "Windows uniquement"
+                }
+            ]
+        },
+        {
+            "categorie": "Connexion à MySQL",
+            "commandes": [
+                {
+                    "commande": "mysql -u <utilisateur> -p",
+                    "description": "Se connecte à MySQL avec un utilisateur et demande le mot de passe",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "mysql -h <hôte> -u <utilisateur> -p",
+                    "description": "Se connecte à une base MySQL distante",
+                    "note": "Linux et Windows"
+                }
+            ]
+        },
+        {
+            "categorie": "Sauvegarde et restauration de bases de données",
+            "commandes": [
+                {
+                    "commande": "mysqldump -u <utilisateur> -p <nom_base> > sauvegarde.sql",
+                    "description": "Crée une sauvegarde de la base de données",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "mysql -u <utilisateur> -p <nom_base> < sauvegarde.sql",
+                    "description": "Restaure une base de données à partir d'une sauvegarde",
+                    "note": "Linux et Windows"
+                }
+            ]
+        },
+        {
+            "categorie": "Vérification de l'état du service MySQL",
+            "commandes": [
+                {
+                    "commande": "sudo service mysql status",
+                    "description": "Vérifie si le service MySQL est actif",
+                    "note": "Linux uniquement"
+                },
+                {
+                    "commande": "systemctl status mysql",
+                    "description": "Vérifie l'état du service MySQL",
+                    "note": "Linux uniquement"
+                }
+            ]
+        },
+        {
+            "categorie": "Changer le mot de passe MySQL",
+            "commandes": [
+                {
+                    "commande": "mysql -u root -p",
+                    "description": "Se connecte à MySQL en tant que root",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "ALTER USER 'root'@'localhost' IDENTIFIED BY '<nouveau_mot_de_passe>';",
+                    "description": "Change le mot de passe pour l'utilisateur root",
+                    "note": "Commande MySQL exécutée après connexion"
+                },
+                {
+                    "commande": "FLUSH PRIVILEGES;",
+                    "description": "Recharge les privilèges pour appliquer les changements",
+                    "note": "Commande MySQL exécutée après modification"
+                },
+                {
+                    "commande": "sudo mysqladmin -u root -p password '<nouveau_mot_de_passe>'",
+                    "description": "Change le mot de passe root via une commande système",
+                    "note": "Linux uniquement"
+                }
+            ]
+        },
+        {
+            "categorie": "Gestion des utilisateurs et privilèges",
+            "commandes": [
+                {
+                    "commande": "CREATE USER '<utilisateur>'@'<hôte>' IDENTIFIED BY '<mot_de_passe>';",
+                    "description": "Crée un nouvel utilisateur MySQL",
+                    "note": "Commande MySQL exécutée après connexion"
+                },
+                {
+                    "commande": "GRANT ALL PRIVILEGES ON <base>.* TO '<utilisateur>'@'<hôte>';",
+                    "description": "Accorde tous les privilèges à un utilisateur sur une base",
+                    "note": "Commande MySQL exécutée après connexion"
+                },
+                {
+                    "commande": "REVOKE ALL PRIVILEGES ON <base>.* FROM '<utilisateur>'@'<hôte>';",
+                    "description": "Révoque tous les privilèges d'un utilisateur",
+                    "note": "Commande MySQL exécutée après connexion"
+                },
+                {
+                    "commande": "DROP USER '<utilisateur>'@'<hôte>';",
+                    "description": "Supprime un utilisateur MySQL",
+                    "note": "Commande MySQL exécutée après connexion"
+                }
+            ]
+        },
+        {
+            "categorie": "Autres commandes utiles",
+            "commandes": [
+                {
+                    "commande": "mysqladmin -u root -p version",
+                    "description": "Affiche la version de MySQL installée",
+                    "note": "Linux et Windows"
+                },
+                {
+                    "commande": "mysqladmin -u root -p processlist",
+                    "description": "Affiche les processus actifs",
+                    "note": "Linux et Windows"
+                }
+            ]
+        }
+    ]
+}
